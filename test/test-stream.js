@@ -71,3 +71,18 @@ exports['test with array with one number in it'] = function (test) {
   });
   source.end('[ 8 ]');
 }.withDomain()
+
+exports['test with array with 2 numbers in it'] = function (test) {
+  var a = [8, 10];
+  var source = new stream.PassThrough();
+  var p = parser();
+  test.expect(3);
+  source.pipe(p).pipe(sink({objectMode: true})).on('data', function(data) {
+    test.equal(2, data.length, 'There should be some data at the end');
+    test.done();
+  });
+  p.on('data', function(line) {
+    test.equal(line, a.shift(), 'We should get our number in the data event');
+  });
+  source.end(JSON.stringify(a));
+}.withDomain()
