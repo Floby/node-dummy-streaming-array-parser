@@ -61,9 +61,13 @@ exports['Test stream with non closing array'] = function (test) {
 exports['test with array with one number in it'] = function (test) {
   var source = new stream.PassThrough();
   var p = parser();
+  test.expect(2);
   source.pipe(p).pipe(sink({objectMode: true})).on('data', function(data) {
-    test.equals(0, data.length, 'there should be no data at the end');
+    test.equal(1, data.length, 'There should be some data at the end');
+    test.done();
   });
-  p.on('data', test.fail.bind(test, "There shoud be no data emitted"));
-  source.end('[ ');
+  p.on('data', function(line) {
+    test.equal(line, 8, 'We should get our number in the data event');
+  });
+  source.end('[ 8 ]');
 }.withDomain()
