@@ -1,6 +1,6 @@
 {
   "name": "dummy-streaming-array-parser",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Dummy Parser for streaming JSON as actual JSON Array",
   "main": "index.js",
   "scripts": {
