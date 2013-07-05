@@ -1,0 +1,25 @@
+{
+  "name": "dummy-streaming-array-parser",
+  "version": "0.0.0",
+  "description": "Dummy Parser for streaming JSON as actual JSON Array",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Floby/node-dummy-streaming-array-parser.git"
+  },
+  "keywords": [
+    "streaming",
+    "stream",
+    "json",
+    "parser",
+    ""
+  ],
+  "author": "Florent Jaby <florent.jaby@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Floby/node-dummy-streaming-array-parser/issues"
+  }
+}
